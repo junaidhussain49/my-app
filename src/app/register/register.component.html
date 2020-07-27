@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <form userForm = "NgForm" (ngSubmit)="onSubmit()" novalidate >
+       
+        
+        <h2>Register</h2>
+        <div class="form-group">
+        <label>
+            Name:
+        </label>
+            <input type="text" required #name="ngModel"  [class.is-invalid] ="name.invalid && name.touched"
+            class ="form-control " name ="name" [(ngModel)]="userModel.name">
+            <small [class.d-none] ="name.valid ||  name.untouched">Name is required</small>
+            
+       </div>
+        <br>
+        <div ngModelGroup="Address"></div>
+            <div class="form-group">
+        <label>
+            Address:
+            <input type="text"  style="font-size: 16pt; height: 20px; width:300px; " class ="form-control" 
+            name="address" [(ngModel)]="userModel.address">
+          </label>
+            </div>
+        <br>
+        <div class="form-group">16
+          <label>
+            City:
+            <input type="text" name="city" class ="form-control" [(ngModel)]="userModel.city">
+          </label>
+        </div>
+          <br>
+          <div class="form-group">
+          <label>
+            State:
+            <input type="text" name="state" class ="form-control" [(ngModel)]="userModel.state">
+          </label>
+        </div>
+        
+        <br>
+        <div class="form-group">
+          <label>
+            Zip Code:
+            <input type="text" name="zipcode" class ="form-control" [(ngModel)]="userModel.zipcode">
+          </label>
+        </div>
+       
+          
+          <br>
+          <button  class="btn btn-primary" type="button">Submit</button>
+    </form>
+</div>
